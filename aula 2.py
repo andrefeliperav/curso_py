@@ -129,13 +129,87 @@
 '''Exercício 5'''
 
 n = int(input("Digite o número de contatos da lista: "))
-if n < 10:
-    n = int(input("Digite um número de contatos da lista que seja maior que 9: "))
+while n < 10:
+    n = int(input("O número de contatos da lista deve ser, no mínimo, 10. Redigite-o: "))
 
+print(n) #todo COMENTAR
 lista = {}
-for i in range(0,n):
-    a = raw_input("Digite o nome do contato: ")
-    c = raw_input("Digite o telefone do contato: ")
-    lista[a] = c
+r = [[0] for i in range(n)]
+N = []
 
-print(lista)
+for i in range(0, n):
+    a = raw_input("Digite o nome do contato: ")
+    b = raw_input("Digite o telefone do contato: ")
+    lista[a] = b
+    r[i] = list(lista.keys()[i])
+
+print ("A lista telefônica criada é: \n", lista)
+
+# print(lista.values()[0])
+# print(lista.values()[1])
+# print(lista.values()[2])
+
+for i in range(0, n):
+    c = 0
+    for j in range(i+1, n):
+        if r[i] == r[j]:
+            if lista.keys()[j] not in N:
+                N.append(lista.keys()[j])
+                print (r[i])
+                print (r[j])
+            c = c+1
+        else:
+            m = len(r[i])
+            n = len(r[j])
+            if m != n:
+                pass
+            else:
+                e = 0
+                for k in range(n):
+                    if r[i][k] in r[j]:
+                        e = e + 1
+                    else:
+                        break
+                if e == n:
+                    if lista.keys()[j] not in N:
+                        N.append(lista.keys()[j])
+                        print (r[i])
+                        print (r[j])
+                    c = c+1
+    if c == 0:
+        pass
+    else:
+        if lista.keys()[i] not in N:
+            N.append(lista.keys()[i])
+            print (r[i])
+            print (r[j])
+
+
+print("Nesta lista, são anagramas: ", N)
+
+# for i in range(0, n):
+#     N = [lista.keys()[i]]
+#     c = 0
+#     for j in range(i+1, n):
+#         if r[i] == r[j]:
+#             N = N+[lista.keys[j]]
+#             c = c+1
+#         else:
+#             m = len(r[i])
+#             n = len(r[j])
+#             if m != n:
+#                 pass
+#             else:
+#                 e = 0
+#                 for k in range(n):
+#                     if r[i][k] in r[j]:
+#                         e = e + 1
+#                     else:
+#                         break
+#                 if e == n:
+#                     N = N + [lista.keys()[j]]
+#                     c = c+1
+#     if c == 0:
+#         pass
+#     else:
+#         print("Nesta lista, são anagramas: ", N)
