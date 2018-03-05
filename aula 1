@@ -1,0 +1,20 @@
+Daniel Pimentel
+e-mail d4n1@d4n1.org
+#Wpp 988898116
+Github github.com/d4n1/talk
+
+Python para Zumbis - Fernando Masanori (pycursos.com/python-para-zumbis)
+ABC-> linguagem-base de algoritmos na lingua inglesa
+pypy ("dialeto"  em python que auxilia na agilidade da linguagem)
+Linguagem de alto nível: C, C++, Python...;
+Compilado: C, C++, Rust... Código fonte gera, com compilador, objeto binário a ser interpretado com a máquina (necessita
+ ler o codigo por completo, além de precisar recompliar a medida que muda o sistema operacional)
+Linguagem de baixo nível: Assembler..;
+Interpretado: Python, Lua, Matlab Código fonte gera o binário interpretado pela máquina
+
+Bytecode (meio termo entre interpretado e compilado.
+Multiparadigma: orientação objeto, funcional.
+Exceções: erros pré-determinados;
+PEMDAS (ParentesesExponenciacaoMultiplicacaoDivisaoAdicaoSubtracao)
+Pydoc
+Lista (list) só funciona com inteiro (consequentemente, range)
