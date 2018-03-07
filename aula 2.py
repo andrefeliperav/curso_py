@@ -132,7 +132,8 @@ n = int(input("Digite o número de contatos da lista: "))
 while n < 10:
     n = int(input("O número de contatos da lista deve ser, no mínimo, 10. Redigite-o: "))
 
-print(n) #todo COMENTAR
+# n=5
+print("O número de contatos na lista será de: ", n, "Vamos digitar?!") #todo COMENTAR
 lista = {}
 r = [[0] for i in range(n)]
 N = []
@@ -141,49 +142,48 @@ for i in range(0, n):
     a = raw_input("Digite o nome do contato: ")
     b = raw_input("Digite o telefone do contato: ")
     lista[a] = b
-    r[i] = list(lista.keys()[i])
 
 print ("A lista telefônica criada é: \n", lista)
 
-# print(lista.values()[0])
-# print(lista.values()[1])
-# print(lista.values()[2])
-
 for i in range(0, n):
-    c = 0
-    for j in range(i+1, n):
+    r[i] = list(lista.keys()[i])
+
+for i in range(0, n-2):
+    for j in range(i+1, n-1):
         if r[i] == r[j]:
-            if lista.keys()[j] not in N:
-                N.append(lista.keys()[j])
-                print (r[i])
-                print (r[j])
-            c = c+1
+            if lista.keys()[j-1] not in N:
+                N.append(lista.keys()[j-1])
+                print ("caso 1i: ", r[i])
+                print ("caso 1j: ", r[j])
+                print ("caso 1a: ", lista.keys()[j-1])
+            if lista.keys()[i - 1] not in N:
+                N.append(lista.keys()[i - 1])
+                print ("caso 2i: ", r[i])
+                print ("caso 2j: ", r[j])
+                print ("caso 2a: ", lista.keys()[i - 1])
         else:
             m = len(r[i])
             n = len(r[j])
             if m != n:
-                pass
+                continue
             else:
                 e = 0
                 for k in range(n):
                     if r[i][k] in r[j]:
                         e = e + 1
                     else:
-                        break
+                        continue
                 if e == n:
                     if lista.keys()[j] not in N:
                         N.append(lista.keys()[j])
-                        print (r[i])
-                        print (r[j])
-                    c = c+1
-    if c == 0:
-        pass
-    else:
-        if lista.keys()[i] not in N:
-            N.append(lista.keys()[i])
-            print (r[i])
-            print (r[j])
-
+                        print ("caso 4i: ", r[i])
+                        print ("caso 4j: ", r[j])
+                        print ("caso 4a: ", lista.keys()[j])
+                    if lista.keys()[i] not in N:
+                        N.append(lista.keys()[i])
+                        print ("caso 3i: ", r[i])
+                        print ("caso 3j: ", r[j])
+                        print ("caso 3a: ", lista.keys()[i])
 
 print("Nesta lista, são anagramas: ", N)
 
