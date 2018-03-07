@@ -128,12 +128,12 @@
 
 '''Exercício 5'''
 
-n = int(input("Digite o número de contatos da lista: "))
-while n < 10:
-    n = int(input("O número de contatos da lista deve ser, no mínimo, 10. Redigite-o: "))
+# n = int(input("Digite o número de contatos da lista: "))
+# while n < 10:
+#     n = int(input("O número de contatos da lista deve ser, no mínimo, 10. Redigite-o: "))
 
-# n=5
-print("O número de contatos na lista será de: ", n, "Vamos digitar?!") #todo COMENTAR
+n=5
+# print("O número de contatos na lista será de: ", n) #todo COMENTAR
 lista = {}
 r = [[0] for i in range(n)]
 N = []
